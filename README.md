@@ -1,12 +1,12 @@
 Week 8 Project (Food Comment App)
 
-This week's was challenging for me even-though I broadly understood the modules.
+This week's was challenging for me even though I broadly understood the modules.
 
-My struggeled to fetch the data from Vercel Database with the params. I research a lot and I even tried using "getServerSideProps" but i still could't get it to work.
+I struggled to fetch the data from the Vercel Database with the parameters. I researched a lot and I even tried using "getServerSideProps" but I still couldn't get it to work.
 
-Also my comments and add pages could not post the data i was giving it.
+Also my comments and add pages could not post the data I was giving it.
 
-Due to work I've had limited time to keep trying before the deadline so unfortunately i am have to submit uncompleted work.
+Due to work I've had limited time to keep trying before the deadline so unfortunately I have to submit uncompleted work.
 
 My apologies.
 
