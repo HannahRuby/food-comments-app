@@ -7,7 +7,7 @@ export default function AddFood() {
     "use server";
 
     const name = formData.get("name");
-    const content = formData.get("content");
+    const description = formData.get("content");
 
     await sql`INSERT INTO foods (name, content) values (${name}, ${content})`;
 
@@ -18,7 +18,7 @@ export default function AddFood() {
 
   return (
     <div className="add-food-container">
-      <h2>Add Food!</h2>
+      <h2>Add Froguins!</h2>
       <form action={handleAddFood}>
         <label htmlFor="name">Name</label>
         <input name="name" id="name" placeholder="Name" />

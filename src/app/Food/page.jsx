@@ -1,3 +1,5 @@
+// import Image from "next/image";
+import { useClient } from "next/navigation";
 import Link from "next/link";
 import { sql } from "@vercel/postgres";
 import styles from "./globals.css";
