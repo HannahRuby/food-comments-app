@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Week 8 Project (Food Comment App)
 
-## Getting Started
+This week's was challenging for me even-though I broadly understood the modules.
 
-First, run the development server:
+My struggeled to fetch the data from Vercel Database with the params. I research a lot and I even tried using "getServerSideProps" but i still could't get it to work.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Also my comments and add pages could not post the data i was giving it.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Due to work I've had limited time to keep trying before the deadline so unfortunately i am have to submit uncompleted work.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+My apologies.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+These are the expectations :
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Programming logic - A list of blog posts, sortable by ascending or descending order
+Programming logic - A SQL schema for a posts table, and a comments table that has a post_id column connecting it to the posts table.
+Modern development tools -A form to allow creating a new comment, which is saved to the new comments table including the Post ID.
+Modern development tools - Refresh the /posts route data when adding a new post, and redirect the user to the list of posts
+Modern development tools - A/post/:postId route which displays a new comment on the page when it is posted
