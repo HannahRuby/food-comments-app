@@ -3,7 +3,7 @@ Week 8 Project (Food Comment App)
 This week's was challenging for me even though I broadly understood the modules.
 
 I struggled to fetch the data from the Vercel Database with the parameters. I researched a lot and I even tried using "getServerSideProps" but I still couldn't get it to work.
-I also struggled to get the folders set up right so I could deploy the right App, I was getting a folder within the main App after creating the Next.js App. The Vercel deploment failed several times before I could get it to work by recreating new projects and restarting my work until I finally succeeded. 
+I also struggled to get the folders set up right so I could deploy the right App, I was getting a folder within the main App after creating the Next.js App. The Vercel deployment failed several times before I could get it to work by recreating new projects and restarting my work until I finally succeeded. 
 
 Also my comments and add pages could not post the data I was giving it.
 
