@@ -7,25 +7,55 @@ export default function AddFood() {
     "use server";
 
     const name = formData.get("name");
-    const description = formData.get("content");
+    const content = formData.get("content");
 
     await sql`INSERT INTO foods (name, content) values (${name}, ${content})`;
 
-    revalidatePath("/");
+    revalidatePath("/foods");
 
-    redirect("/");
+    redirect("/foods");
   }
 
   return (
-    <div className="add-food-container">
-      <h2>Add Froguins!</h2>
-      <form action={handleAddFood}>
-        <label htmlFor="name">Name</label>
-        <input name="name" id="name" placeholder="Name" />
-        <label htmlFor="content">Description</label>
-        <input name="content" id="content" placeholder="Content" />
-
-        <button type="submit">Add a Food!</button>
+    <div className="add-food-container bg-gray-100 p-8 rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold mb-4">Add Food</h2>
+      <form onSubmit={handleAddFood} className="space-y-4">
+        <div>
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Name"
+            className="mt-1 p-2 w-full border-gray-300 rounded-md"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="content"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Content
+          </label>
+          <input
+            type="text"
+            name="content"
+            id="content"
+            placeholder="Content"
+            className="mt-1 p-2 w-full border-gray-300 rounded-md"
+          />
+        </div>
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+        >
+          Add Food
+        </button>
       </form>
     </div>
   );
