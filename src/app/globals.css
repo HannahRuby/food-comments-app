@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -8,7 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -26,8 +26,36 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+} */
+
+.post-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.post-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.post-content {
+  line-height: 1.5;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
 }

@@ -1,29 +1,57 @@
 import { sql } from "@vercel/postgres";
+import Image from "next/image";
 
 export async function generateMetadata({ params }) {
-  const result = await sql`SELECT * FROM foods WHERE id = ${params.id}`;
-  // WE FETCH THE DATA FOR THE SPECIFIC POST
+  const food = await fetchFood(params.id);
 
-  const food = result.rows[0];
+  if (!food) {
+    return {
+      title: "Food Not Found",
+      description: "Sorry, the requested food item was not found.",
+    };
+  }
 
   return {
     title: `Hannah's Food: ${food.name}`,
     description: `This is a post about ${food.content}`,
-    //WE DYNAMICALLY ADD THE TITLE AND DESCRIPTION FOR THE SPECIFIC POST TO THE PAGES METADATA
   };
 }
 
-export default async function Food({ params }) {
-  const result = await sql`SELECT * FROM foods WHERE id = ${params.id}`;
+async function fetchFood(id) {
+  // Ensure that the id parameter is a valid integer
+  const foodId = parseInt(id);
 
-  const food = result.rows[0];
+  // Check if the parsed ID is a valid integer
+  if (isNaN(foodId)) {
+    return null; // Return null if the ID is not a valid integer
+  }
+
+  try {
+    // Execute the SQL query with the parsed ID
+    const result = await sql`SELECT * FROM foods WHERE id = ${foodId}`;
+    return result.rows[0];
+  } catch (error) {
+    console.error("Error fetching food:", error);
+    return null; // Return null if an error occurs during the query execution
+  }
+}
+
+export default function Food({ food }) {
+  if (!food) {
+    return <div>No food found</div>;
+  }
 
   return (
-    <div>
-      <p>{food.id}</p>
-      <h2>{food.name}</h2>
-      <p>{food.content}</p>
+    <div className={styles.postContainer}>
+      <h2 className={styles.postTitle}>{food.name}</h2>
+      <p className={styles.postContent}>{food.content}</p>
+      <Image
+        src={`/images/${food.id}.png`} // Assuming images are stored in /images directory
+        alt={food.name}
+        width={300}
+        height={300}
+        className={styles.postImage}
+      />
     </div>
-    // WE THEN RENDER ALL OF THE INDIVIDUAL POST DATA TO THE PAGE
   );
 }
